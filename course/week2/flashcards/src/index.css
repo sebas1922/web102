@@ -13,11 +13,4 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.card {
-  width: 1500px;
-  height: 700px;
-  background-color: #6d6565;
-  border-radius: 10px;
-  padding:80px 100px;
-}
 

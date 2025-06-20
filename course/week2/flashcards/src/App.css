@@ -7,4 +7,15 @@
   align-items: center;
 }
 
+#button-pair {
+  padding: 50px;
+  display:flex;
+  justify-content: center;
+  gap: 30px;
+}
 
+button {
+  width: 200px;
+  height: 75px;
+  border-radius: 10px;
+}

@@ -6,28 +6,27 @@ import { useState } from 'react'
 function App() {
 
   const [index, setIndex] = useState(0)
-  
+
   const decrementIndex = () => {
-    setIndex( (prevIndex) => {
-      return prevIndex--
+    setIndex((prevIndex) => {
+      return prevIndex - 1
     })
-    console.log('button clicked')
   }
 
   const incrementIndex = () => {
-    setIndex( (prevIndex) => {
-      return prevIndex++
+    setIndex((prevIndex) => {
+      return prevIndex + 1
     })
   }
 
-  const {answer, question} = card_data[index]
-  
+  const { answer, question } = card_data[index]
+
 
   return (
     <div>
       <h1>Random Quiz cuh</h1>
       <h2>This quiz is about this randomahh shit</h2>
-      <Card question={question} answer={answer}/>
+      <Card question={question} answer={answer} />
       <div id="button-pair">
         <button onClick={decrementIndex}>
           back
