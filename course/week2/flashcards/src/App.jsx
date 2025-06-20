@@ -1,21 +1,25 @@
 import './App.css'
 import Card from './components/Card/Card'
 import card_data from './data/card_data'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(() => {
+    return Math.floor(Math.random() * card_data.length)
+  })
+
+
 
   const decrementIndex = () => {
     setIndex((prevIndex) => {
-      return prevIndex - 1
+      return prevIndex > 0 ? prevIndex - 1 : card_data.length-1
     })
   }
 
   const incrementIndex = () => {
     setIndex((prevIndex) => {
-      return prevIndex + 1
+      return prevIndex < card_data.length-1 ? prevIndex + 1 : 0
     })
   }
 
@@ -23,16 +27,17 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Random Quiz cuh</h1>
-      <h2>This quiz is about this randomahh shit</h2>
-      <Card question={question} answer={answer} />
+    <div className="appContainer">
+      <h1>Car Flashcard Quiz</h1>
+      <h2>This quiz will test your knowledge on car brands</h2>
+      <h3>Total Number of Cards: {card_data.length}</h3>
+      <Card key={index} question={question} answer={answer} />
       <div id="button-pair">
         <button onClick={decrementIndex}>
-          back
+          previous
         </button>
         <button onClick={incrementIndex}>
-          forward
+          next
         </button>
       </div>
     </div>

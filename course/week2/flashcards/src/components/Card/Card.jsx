@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Card.module.css'
 
-function Card({question, answer}) {
+function Card({question, answer, index}) {
     const [isFlipped, setIsFlipped] = useState(false)
+    
+    useEffect(() => {
+        setIsFlipped(false)
+    }, [question, answer, index])
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped)
-        console.log('CARD CLICKED')
     }
     
     const cardClasses = `${styles.card} ${isFlipped ? styles.flipped: ''}`
@@ -18,4 +21,4 @@ function Card({question, answer}) {
     )
 }
 
-export default Card;
+export default Card

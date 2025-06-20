@@ -1,21 +1,30 @@
 #root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
   display:flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
+
 }
 
+
+
+
 #button-pair {
-  padding: 50px;
+  margin-top: 50px;
   display:flex;
   justify-content: center;
   gap: 30px;
+  height: 7vh;
 }
 
 button {
-  width: 200px;
-  height: 75px;
+  width: 30%;
+  height: 100%;
   border-radius: 10px;
+  font-size: 1.4vw;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,29 +1,37 @@
 /* src/Card.module.css */
 .card {
-  background-color: #ccbcbc;
-  border: 20px solid #007bff;
+  background-color: #393939;
+  color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  width: 1000px !important;
-  height: 1000px !important;
+  width: 55vw;
+  height: 45vh;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 2s, box-shadow 2s;
+  transition: transform 0.3s ease, box-shadow 0.5s;
+  padding: 40px;
 }
 
+.card:active {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 24px 24px rgba(0, 0, 0, 0.2);
 }
 
 .flipped {
-  background-color: #379292;
-  border-color: #28a745;
+  background-color: #9c9c9c;
+  color: #1d1d1d;
 }
 
 .cardText {
 
-  /* font-size: 1.2rem; */
-  user-select: none; /* Prevents text selection on repeated clicks */
+  font-size: 40px;
+  user-select: none;
+  /* Prevents text selection on repeated clicks */
 }
