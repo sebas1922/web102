@@ -1,0 +1,69 @@
+#root {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: 7vh;
+}
+
+.nav-button {
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+  font-size: 1.4vw;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #eee;
+  color: #888;
+  border: none;
+}
+
+.guess-input {
+
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.guess-input:focus {
+  border-color: #007bff;
+}
+
+.guess-input-correct {
+  border-color: #28a745;
+}
+
+.guess-input-incorrect {
+  border-color: #dc3545;
+}
