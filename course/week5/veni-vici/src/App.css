@@ -1,0 +1,70 @@
+#root {
+  text-align: center;
+}
+
+/* /Users/sebas/programs/web102/course/week5/veni-vici/src/App.css */
+
+/* A basic reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent scrolling on the page */
+html, body {
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #3a3a3a; /* A light grey background for the whole page */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  opacity: 0.5; /* Set your desired opacity */
+  z-index: -1; /* Places the image behind the flex container's content */
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh; /* 100% of viewport height */ 
+}
+
+.sidebar-left {
+  height: 100vh;
+  /* This shorthand means: don't grow, don't shrink, and have a base width of 250px. */
+  width: 250px;
+  background-color: #717171;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-right:auto;
+}
+
+.sidebar-right {
+  height: 100vh;
+  /* This shorthand means: don't grow, don't shrink, and have a base width of 250px. */
+  width: 250px;
+  background-color: #717171;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-left:auto;
+}
+
+.main-content {
+  /* This will make the main content area take up all available space. */
+  display: flex;
+  padding-top: 4rem;
+  height: 60%;
+  width: 30%;
+  background-color: #717171;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 90%;
+  /* The MainCard component will be centered inside this container. */
+}
