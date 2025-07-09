@@ -11,7 +11,7 @@ const MainCard = () => {
     }
 
     useState(() => {
-        const ranNum = ;
+        const ranNum = Math.floor(Math.random() * 100) + 1
         fetchPlayer(ranNum)
     }, [hasLoaded])
 
