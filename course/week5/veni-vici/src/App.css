@@ -60,11 +60,16 @@ html, body {
   display: flex;
   padding-top: 4rem;
   height: 60%;
-  width: 30%;
+  width: 50%;
   background-color: #717171;
   border-radius: 8px;
   justify-content: center;
   align-items: flex-start;
   opacity: 90%;
   /* The MainCard component will be centered inside this container. */
+}
+
+.attribute-buttons {
+  display: flex;
+  gap: 3rem;
 }

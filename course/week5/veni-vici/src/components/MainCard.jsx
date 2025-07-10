@@ -1,38 +1,43 @@
 import { useState, useEffect } from 'react'
-import fetchPlayer from '../api/fetchPlayer'
+import fetchValidPlayer from '../api/fetchPlayer'
 
+const MainCard = ({ onBanAttribute, banList }) => {
 
-const MainCard = () => {
+    //event handlers
+    const onNumberClick = () => onBanAttribute('number', player.number);
+    const onAgeClick = () => onBanAttribute('age', player.age);
+    const onHeightClick = () => onBanAttribute('height', player.height);
+    const onPositionClick = () => onBanAttribute('position', player.position);
+    const onNationalityClick = () => onBanAttribute('nationality', player.nationality);
 
+    //will load a certain card based on if the user clicked the first button or not
     const [hasLoaded, setHasLoaded] = useState(false)
-
     const handleStartClick = () => {
         setHasLoaded(true)
     }
 
-    useState(() => {
-        const ranNum = Math.floor(Math.random() * 100) + 1
-        fetchPlayer(ranNum)
-    }, [hasLoaded])
+    //load player when card is mounted
+    useEffect(() => {
+        // Only fetch on initial mount if the game has started
+        if (hasLoaded) {
+            fetchNewPlayer(banList);
+        }
+    }, [])
 
-    const fetchNewItem = () => {
-        const { 
-            firstname, 
-            lastname,
-            age,
-            nationality,
-            photo,
-            number,
-            position 
-        } = fetchPlayer(Math.floor(Math.random() * 100) + 1)
-        return (
-            <div>
-                {firstname} {lastname}
-            </div>
-        )
+    //handle setting the player
+    const [player, setPlayer] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const fetchNewPlayer = async () => {
+        setIsLoading(true);
+        const newPlayer = await fetchValidPlayer(banList);
+        if (newPlayer) {
+            setPlayer(newPlayer);
+        } else {
+            alert("Could not find a new player. Try removing some banned attributes!");
+        }
+        setIsLoading(false);
     }
-
-
 
     if (!hasLoaded) {
         // Render the initial "Start" screen
@@ -45,16 +50,29 @@ const MainCard = () => {
         );
     }
 
+    if (isLoading) {
+        return <div>Searching for a player...</div>;
+    }
+
+    if (!player) {
+        return <div>Click "Discover" to find your first player! <button onClick={fetchNewPlayer}>Discover</button></div>;
+    }
+
     // Otherwise, render your main application view
     return (
         <div>
-            {/* Your main card component with the player info */}
-            {/* Your ban list component */}
-            {/* Your history component */}
-            <button onClick={fetchNewItem}>Discover New Player</button>
+            <div className="attribute-buttons">
+                <button onClick={onNumberClick}>Shirt number: {player.number}</button>
+                <button onClick={onAgeClick}>Age: {player.age}</button>
+                <button onClick={onHeightClick}>Height: {player.height}</button>
+                <button onClick={onPositionClick}>Position: {player.position}</button>
+                <button onClick={onNationalityClick}>Nationality: {player.nationality}</button>
+            </div>
+            <h2>{`${player.firstname} ${player.lastname}`}</h2>
+            <img src={player.photo}></img>
+            <button onClick={fetchNewPlayer}>Discover New Player</button>
         </div>
     );
 }
-
 
 export default MainCard
