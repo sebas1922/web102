@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1d1f1d;
+  margin: 20px 30px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}

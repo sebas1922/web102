@@ -1,0 +1,33 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e6e6e6;
+  overflow: hidden; /* Prevents the whole page from scrolling */
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1; /* This is key: it makes the wrapper fill the remaining vertical space */
+  max-width: 1800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 30px;
+  overflow: hidden; /* Prevents this wrapper from creating a scrollbar */
+}
+
+.sidebar-container {
+  flex-basis: 350px; /* Give the sidebar a fixed width */
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
+}
+
+/* This container will hold our MainContent component and allow it to grow */
+.main-content-area {
+  flex-grow: 1; /* Allows the main content area to take up all remaining horizontal space */
+  overflow-y: auto; /* A fallback, but the component itself handles this better */
+  position: relative; /* Needed for some potential child positioning */
+}
+

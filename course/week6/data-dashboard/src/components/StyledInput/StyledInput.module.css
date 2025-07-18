@@ -1,0 +1,11 @@
+.StyledInput {
+    padding: 1rem;
+    color: rgb(91, 91, 91);
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+    border-color: rgb(213, 213, 213);
+    border-style: solid;
+}
