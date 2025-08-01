@@ -1,0 +1,114 @@
+/* HeroCard Component Styles - CSS Modules */
+
+.heroCard {
+  background-color: #1a1a2e;
+  border: 1px solid #16213e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.heroCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border-color: #3b82f6;
+}
+
+/* Hero Header */
+.heroHeader {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #16213e;
+  padding-bottom: 1rem;
+}
+
+.heroName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.secretIdentity {
+  font-size: 0.875rem;
+  color: #b8b8b8;
+  font-style: italic;
+}
+
+/* Hero Details */
+.heroDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.heroAttribute {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attributeLabel {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.attributeValue {
+  color: #b8b8b8;
+  font-size: 0.875rem;
+  text-align: right;
+  max-width: 60%;
+}
+
+/* Special styling for weakness */
+.weakness {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* Card Actions */
+.cardActions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #16213e;
+}
+
+.editButton {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heroCard {
+    padding: 1rem;
+  }
+  
+  .heroAttribute {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .attributeValue {
+    max-width: 100%;
+    text-align: left;
+  }
+}

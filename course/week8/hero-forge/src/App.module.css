@@ -1,0 +1,85 @@
+/* App-specific styles - CSS Modules */
+
+.app {
+  min-height: 100vh;
+  background-color: #0f0f23;
+  color: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+  height: 70px;
+  background-color: #1a1a2e;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navBrand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navLink {
+  color: #b8b8b8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background-color: #16213e;
+}
+
+.navLinkActive {
+  color: #ffffff;
+  background-color: #3b82f6;
+}
+
+/* Main content area */
+.mainContent {
+  padding: 2rem;
+  max-width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .navContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+  }
+  
+  .mainContent {
+    padding: 1rem;
+  }
+}

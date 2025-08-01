@@ -1,0 +1,150 @@
+/* Modern CSS Reset & Foundation */
+
+/* Reset box-sizing for better control */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* PROPER: Remove default margins and paddings without !important */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Set core root defaults */
+html {
+  /* TARGETED: Only force override for layout-critical elements */
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* Improve text rendering */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  /* Set a responsive font size base */
+  font-size: 16px;
+  
+  /* CRITICAL: Set html background to match app theme */
+  background-color: #0f0f23 !important;
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  /* CRITICAL: Force override browser default 8px margin */
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* CRITICAL: Set body background to match app theme */
+  background-color: #0f0f23 !important;
+  color: #ffffff;
+  height: 100%;
+  
+  /* Set a sensible minimum width */
+  min-width: 320px;
+  
+  /* Inherit font smoothing from html */
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+}
+
+/* Make images responsive by default */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove default button styling */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+/* Remove default button styling but keep accessibility */
+button {
+  background: none;
+  border: none;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+/* Ensure button text doesn't wrap */
+button {
+  white-space: nowrap;
+}
+
+/* Remove default list styling */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link styling but keep accessibility */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure links are keyboard accessible */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Improve heading line-height */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: inherit;
+}
+
+/* Make sure text content doesn't break out of containers */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Create a root stacking context for better z-index management */
+#root {
+  isolation: isolate;
+  /* CRITICAL: Ensure #root covers full viewport with dark background */
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0f0f23;
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive breakpoints helper (optional - uncomment if needed) */
+/*
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+}
+
+@media (min-width: 1200px) {
+  html { font-size: 18px; }
+}
+*/

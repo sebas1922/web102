@@ -1,0 +1,72 @@
+/* HomePage Styles - CSS Modules */
+
+.homePage {
+  /* Container styles if needed */
+}
+
+.title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.heroesGrid {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.loadingMessage {
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 1.125rem;
+  padding: 2rem;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #ef4444;
+  font-size: 1.125rem;
+  padding: 2rem;
+}
+
+.retryButton {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.retryButton:hover {
+  background-color: #2563eb;
+}
+
+.emptyState {
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 1.125rem;
+  padding: 3rem 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
